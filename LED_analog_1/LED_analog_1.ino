@@ -1,6 +1,8 @@
 int ledPin = 9;
 int i = 0;
 int lightLevel = 0;
+int delayTime = 50;
+
 
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
@@ -21,16 +23,11 @@ void loop() {
   if(lightLevel == 255)
   {
     lightLevel = 0;
-    Serial.println("lightLevel should be 0");
+    delayTime = 10000;
   }
 
   analogWrite(ledPin, lightLevel);
-  delay(50);
-  
-  Serial.print("i: ");
-  Serial.print(i);
-  Serial.print(" ");
-  Serial.print("lightLevel: ");
-  Serial.print(lightLevel);
-  Serial.println();
+  delay(delayTime);
+  Serial.print(i, " ", lightLevel);
+  Serial.println():
 }
