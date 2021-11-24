@@ -12,10 +12,6 @@ int startingLed = 3;
 
 byte leds = 0;    // Variable to hold the pattern of which LEDs are currently turned on or off
 
-/*
- * setup() - this function runs once when you turn your Arduino on
- * We initialize the serial connection with the computer
- */
 void setup() 
 {
   // Set all the pins of 74HC595 as OUTPUT
@@ -40,9 +36,6 @@ void loop()
   ShowDistance(startingLed, distance_cm);
 }
 
-/*
- * updateShiftRegister() - This function sets the latchPin to low, then calls the Arduino function 'shiftOut' to shift out contents of variable 'leds' in the shift register before putting the 'latchPin' high again.
- */
 void updateShiftRegister()
 {
    digitalWrite(latchPin, LOW);
